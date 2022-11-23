@@ -1,0 +1,24 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class CharDistanceTrigger : MonoBehaviour
+{
+    Animator _animator;
+
+    private void Awake()
+    {
+        _animator = transform.parent.GetComponentInChildren<Animator>();
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Candy"))
+            _animator.SetBool("CandyClose", true);
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Candy"))
+            _animator.SetBool("CandyClose", false);
+    }
+}

@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Candy
+  - Segment
   layers:
   - Default
   - TransparentFX
@@ -45,11 +46,11 @@ TagManager:
   - name: Middle
     uniqueID: 774482815
     locked: 0
-  - name: Candy
-    uniqueID: 841074731
-    locked: 0
   - name: Char
     uniqueID: 1658526055
+    locked: 0
+  - name: Candy
+    uniqueID: 841074731
     locked: 0
   - name: Default
     uniqueID: 0

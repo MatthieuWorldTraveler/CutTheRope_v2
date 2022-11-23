@@ -168,7 +168,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.19796753
+        value: 0.05076599
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -299,9 +299,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ropePrefab: {fileID: 2907346931510507905, guid: 17302e692ade9b9449bdbe6b675c499e, type: 3}
-  _segmentNbr: 4
+  _segmentNbr: 10
   _baseRope: {fileID: 8225075723504021141}
   _cuttedRenderer: {fileID: 3580828775544315327}
+  _vanishingSpeed: 0.4
+  _isCutted: 0
 --- !u!50 &6165200506778081209
 Rigidbody2D:
   serializedVersion: 4
@@ -337,7 +339,7 @@ HingeJoint2D:
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 0
-  m_Anchor: {x: 0.031095982, y: -0.09763503}
+  m_Anchor: {x: 0.0042749643, y: -0.017172098}
   m_ConnectedAnchor: {x: 0, y: 0.6114712}
   m_UseMotor: 0
   m_Motor:
@@ -399,7 +401,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.19797325
+        value: 0.050771713
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -471,7 +473,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7905874696911048756}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.031000018, y: 0, z: 0}
+  m_LocalPosition: {x: 0.006, y: 0.005, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

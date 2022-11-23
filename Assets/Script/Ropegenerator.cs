@@ -57,63 +57,21 @@ public class Ropegenerator : MonoBehaviour
 
     }
 
-    // Affichage de la corde (LineRenderer)
     void Update()
     {
         _lineRenderer.SetPosition(0, _transform.position);
 
-        // Puis pour chaque segment...
         for (int i = 0; i < _ropes.Count; i++)
         {
-            // ... on d?finit un nouveau point de position pour la ligne
             _lineRenderer.SetPosition(i + 1, _ropes[i].Transform.position);
         }
 
         if (_isCutted)
         {
-            // Idem pour les segments de la partie coupée
             for (int i = 0; i < _cuttedRopes.Count; i++)
             {
                 _cuttedRenderer.SetPosition(i, _cuttedRopes[i].Transform.position);
             }
-
-            ApplyVanishing();
-        }
-    }
-    private void ApplyVanishing()
-    {
-        //    // Si la disparition n'est pas terminée
-        //    if (!Mathf.Approximately(_lineRenderer.colorGradient.alphaKeys[0].alpha, 0f))
-        //    {
-        //        // On réduit progressivement les clefs alpha des gradients des LineRenderers
-        //        Gradient copyGradient = _lineRenderer.colorGradient;
-        //        GradientAlphaKey[] alphaArray = copyGradient.alphaKeys;
-        //        alphaArray[0].alpha -= _vanishingSpeed * Time.deltaTime;
-        //        alphaArray[1].alpha -= _vanishingSpeed * Time.deltaTime;
-        //        copyGradient.alphaKeys = alphaArray;
-        //        _lineRenderer.colorGradient = copyGradient;
-
-        //        copyGradient = _cuttedLineRenderer.colorGradient;
-        //        alphaArray = copyGradient.alphaKeys;
-        //        alphaArray[0].alpha -= _vanishingSpeed * Time.deltaTime;
-        //        alphaArray[1].alpha -= _vanishingSpeed * Time.deltaTime;
-        //        copyGradient.alphaKeys = alphaArray;
-        //        _cuttedLineRenderer.colorGradient = copyGradient;
-        //    }
-        //    // Sinon (la disparition est terminée)
-        //    else
-        //    {
-        //        // On détruit tous les segments
-        DestroyAllSegments();
-        //    }
-    }
-
-    // On détruit tous les segments
-    private void DestroyAllSegments()
-    {
-        for (int i = 0; i < _ropes.Count; i++)
-        {
-            Destroy(_ropes[i]);
         }
     }
 

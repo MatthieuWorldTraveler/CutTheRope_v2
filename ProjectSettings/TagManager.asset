@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Candy
   - Segment
+  - Char
   layers:
   - Default
   - TransparentFX

@@ -127,7 +127,91 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: obj_rotatable_spikes_button_hd_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 65
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd9f72660252599499fd7790aaa5076d
+      internalID: -2074008725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obj_rotatable_spikes_button_hd_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 65
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4730969ca4472b4aa07fd2709b57075
+      internalID: -1668784577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obj_rotatable_spikes_button_hd_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 65
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca2747627e09d1843ba2a8997cad5192
+      internalID: -1574018181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obj_rotatable_spikes_button_hd_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 65
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f46cf50cd2ced524eb2751fd0cf31449
+      internalID: 76965768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -138,7 +222,15 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      obj_rotatable_spikes_button_hd_2: -1668784577
+      obj_rotatable_spikes_button_hd_0: -2074008725
+      obj_rotatable_spikes_button_hd_3: 1745661754
+      obj_rotatable_spikes_button_hd_1: -1700556023
+      obj_rotatable_spikes_button_hd_4: -1574018181
+      obj_rotatable_spikes_button_hd_6: 76965768
+      obj_rotatable_spikes_button_hd_7: -1199552331
+      obj_rotatable_spikes_button_hd_5: 180944328
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

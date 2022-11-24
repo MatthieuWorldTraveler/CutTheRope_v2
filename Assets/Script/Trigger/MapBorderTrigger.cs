@@ -6,8 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class MapBorderTrigger : MonoBehaviour
 {
+    Animator _charAnim;
 
-    const float _loseWaitTime = .5f;
+    const float _loseWaitTime = 1f;
     float _loseTimer;
 
     bool _gameLost;
@@ -19,7 +20,8 @@ public class MapBorderTrigger : MonoBehaviour
 
     private void Start()
     {
-        _animator = GetComponentInParent<Animator>();
+        _charAnim = GameObject.FindGameObjectWithTag("Char").GetComponentInChildren<Animator>();
+        _animator = transform.parent.GetComponentInChildren<Animator>();
         _animator.SetTrigger("Lost");
         _loseTimer = Time.time + _loseWaitTime;
     }
@@ -38,6 +40,7 @@ public class MapBorderTrigger : MonoBehaviour
         if(collision.gameObject.CompareTag("Candy"))
         {
             _gameLost = true;
+            _charAnim.SetTrigger("CandyLost");
         }
     }
 

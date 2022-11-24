@@ -4,6 +4,7 @@ public class EatenRangeTrigger : MonoBehaviour
 {
     Animator _animator;
     Transform _transform;
+    [SerializeField] LevelManager _levelManager;
 
     private void Awake()
     {
@@ -15,7 +16,7 @@ public class EatenRangeTrigger : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Candy"))
         {
-
+            _levelManager.LevelWon = true;
             _animator.SetTrigger("CandyEaten");
             _animator.SetBool("CandyClose", false);
             Destroy(collision.gameObject, 0.05f);

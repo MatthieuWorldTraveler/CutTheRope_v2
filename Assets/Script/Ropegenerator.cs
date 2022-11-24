@@ -7,7 +7,7 @@ public class Ropegenerator : MonoBehaviour
     [SerializeField] int _segmentNbr = 10;
     [SerializeField] GameObject _baseRope;
     [SerializeField] LineRenderer _cuttedRenderer;
-    [SerializeField] float _vanishingSpeed = 0.4f;
+    [SerializeField] bool _isCutted;
 
 
     List<SegmentBehaviour> _ropes = new List<SegmentBehaviour>();
@@ -17,7 +17,6 @@ public class Ropegenerator : MonoBehaviour
     Transform _transform;
     LineRenderer _lineRenderer;
 
-    [SerializeField] bool _isCutted;
 
     private void Awake()
     {

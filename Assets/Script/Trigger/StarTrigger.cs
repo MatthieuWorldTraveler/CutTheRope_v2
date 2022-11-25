@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class StarTrigger : MonoBehaviour
@@ -8,7 +6,7 @@ public class StarTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Candy"))
+        if (collision.CompareTag("Candy"))
         {
             _levelManager.StarLoot();
             Destroy(this.gameObject);

@@ -10,8 +10,6 @@ public class SegmentBehaviour : MonoBehaviour
     Ropegenerator _rope;
     bool _isDestructible;
 
-    
-
     public Transform Transform { get => _transform; }
     public Rigidbody2D Rigidbody { get => _rigidbody; }
     public HingeJoint2D Joint { get => _joint; }

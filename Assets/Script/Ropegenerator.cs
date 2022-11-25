@@ -58,20 +58,25 @@ public class Ropegenerator : MonoBehaviour
 
     void Update()
     {
-        _lineRenderer.SetPosition(0, _transform.position);
-
-        for (int i = 0; i < _ropes.Count; i++)
+        if (!_isCutted)
         {
-            _lineRenderer.SetPosition(i + 1, _ropes[i].Transform.position);
-        }
+            _lineRenderer.SetPosition(0, _transform.position);
 
-        if (_isCutted)
-        {
-            for (int i = 0; i < _cuttedRopes.Count; i++)
+            for (int i = 0; i < _ropes.Count; i++)
             {
-                _cuttedRenderer.SetPosition(i, _cuttedRopes[i].Transform.position);
-            }
+                _lineRenderer.SetPosition(i + 1, _ropes[i].Transform.position);
+                _lineRenderer.numCornerVertices = 5;
+                _lineRenderer.numCapVertices = 5;
+            } 
         }
+
+        //if (_isCutted)
+        //{
+        //    for (int i = 0; i < _cuttedRopes.Count; i++)
+        //    {
+        //        _cuttedRenderer.SetPosition(i, _cuttedRopes[i].Transform.position);
+        //    }
+        //}
     }
 
     public void Cut(SegmentBehaviour segment)
@@ -88,6 +93,14 @@ public class Ropegenerator : MonoBehaviour
 
             _lineRenderer.positionCount = _ropes.Count + 1;
             _cuttedRenderer.positionCount = _cuttedRopes.Count;
+            foreach(SegmentBehaviour tempSegment in _ropes)
+            {
+                Destroy(tempSegment.gameObject);
+            }
+            foreach (SegmentBehaviour tempSegment in _cuttedRopes)
+            {
+                Destroy(tempSegment.gameObject);
+            }
         }
     }
 }

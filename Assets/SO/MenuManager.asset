@@ -16,4 +16,8 @@ MonoBehaviour:
   _levelNames:
   - Level_1
   - Level_2
-  _currentIndex: 1
+  - Level_3
+  - Level_4
+  - Level_5
+  - Level_6
+  _currentIndex: 0

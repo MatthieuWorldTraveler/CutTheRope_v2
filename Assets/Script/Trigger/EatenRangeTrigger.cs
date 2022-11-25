@@ -3,12 +3,13 @@ using UnityEngine;
 public class EatenRangeTrigger : MonoBehaviour
 {
     Animator _animator;
-    Transform _transform;
     [SerializeField] LevelManager _levelManager;
+
+    AudioSource _audioSource;
 
     private void Awake()
     {
-        _transform = transform;
+        _audioSource = GetComponent<AudioSource>();
         _animator = GetComponent<Animator>();
     }
 
@@ -16,6 +17,7 @@ public class EatenRangeTrigger : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Candy"))
         {
+            _audioSource.Play();
             _levelManager.LevelWon = true;
             _animator.SetTrigger("CandyEaten");
             _animator.SetBool("CandyClose", false);

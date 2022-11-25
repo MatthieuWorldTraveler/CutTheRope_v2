@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -14,12 +12,14 @@ public class MapBorderTrigger : MonoBehaviour
     bool _gameLost;
 
     Animator _animator;
+    AudioSource _audioSource;
 
     public bool Losed { get { return Time.time > _loseTimer; } }
 
 
     private void Start()
     {
+        _audioSource = GetComponentInParent<AudioSource>();
         _charAnim = GameObject.FindGameObjectWithTag("Char").GetComponentInChildren<Animator>();
         _animator = transform.parent.GetComponentInChildren<Animator>();
         _animator.SetTrigger("Lost");
@@ -28,7 +28,7 @@ public class MapBorderTrigger : MonoBehaviour
 
     private void Update()
     {
-        if(!_gameLost)
+        if (!_gameLost)
             _loseTimer = Time.time + _loseWaitTime;
 
         if (Losed)
@@ -37,8 +37,9 @@ public class MapBorderTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("Candy"))
+        if (collision.gameObject.CompareTag("Candy"))
         {
+            _audioSource.Play();
             _gameLost = true;
             _charAnim.SetTrigger("CandyLost");
         }

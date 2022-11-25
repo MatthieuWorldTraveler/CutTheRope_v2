@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,17 +8,22 @@ public class LevelManager : MonoBehaviour
     [SerializeField] StarBehaviour[] _endStars;
     [SerializeField] Animator _endSceneAnim;
     [SerializeField] GameObject _uiScene;
+    [SerializeField] AudioClip _btnSound;
+    [SerializeField] AudioClip[] _starSound;
+
+    AudioSource _audioSource;
     int _starLooted;
 
     public bool LevelWon { get; set; }
     private void Start()
     {
-        Physics2D.gravity = new Vector2(0f, Physics2D.gravity.y);   
+        _audioSource = GetComponent<AudioSource>();
+        Physics2D.gravity = new Vector2(0f, Physics2D.gravity.y);
     }
 
     private void Update()
     {
-        if(LevelWon)
+        if (LevelWon)
         {
             Victory();
         }
@@ -59,7 +62,20 @@ public class LevelManager : MonoBehaviour
 
     public void StarLoot()
     {
+        AudioSourcePlay(_starSound[_starLooted]);
         _stars[_starLooted].IsLooted = true;
         _starLooted++;
     }
+
+    public void BtnPushed()
+    {
+        AudioSourcePlay(_btnSound); 
+    }
+
+    public void AudioSourcePlay(AudioClip audioClip)
+    {
+        _audioSource.clip = audioClip;
+        _audioSource.Play();
+    }
 }
+
